@@ -4,8 +4,11 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+<<<<<<< HEAD
 DEVICE_PATH := device/motorola/vicky
 KERNEL_PATH := device/motorola/vicky-kernel
+
+BUILD_BROKEN_DUP_RULES := true
 
 # Architecture
 TARGET_ARCH := arm64
