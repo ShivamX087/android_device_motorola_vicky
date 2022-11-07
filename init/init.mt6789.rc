@@ -339,7 +339,7 @@ on post-fs-data
     chown system system /dev/mtk_mdp
 
     # MDP SYNC
-    chmod 0640 /dev/mdp_sync
+    chmod 0644 /dev/mdp_sync
     chown system system /dev/mdp_sync
 
     # MML PQ
