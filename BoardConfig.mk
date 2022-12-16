@@ -41,3 +41,6 @@ TARGET_NO_BOOTLOADER := true
 
 # Assert
 TARGET_OTA_ASSERT_DEVICE :=  vicky
+
+# Build
+BUILD_BROKEN_DUP_RULES := true
