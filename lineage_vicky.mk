@@ -22,6 +22,13 @@ PRODUCT_MODEL := moto G72
 
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
+PRODUCT_SYSTEM_NAME := vicky
+PRODUCT_SYSTEM_DEVICE := vicky
+
 PRODUCT_BUILD_PROP_OVERRIDES += \
     BuildDesc="vicky_g_sys-user 13 T2SVS33M.68-21-8-14 d6e5ed release-keys" \
-    BuildFingerprint=motorola/vicky_g_sys/vicky:13/T2SVS33M.68-21-8-14/d6e5ed:user/release-keys
+    BuildFingerprint=motorola/vicky_g_sys/vicky:13/T2SVS33M.68-21-8-14/d6e5ed:user/release-keys \
+    SystemModel=$(PRODUCT_SYSTEM_DEVICE) \
+    SystemName=$(PRODUCT_SYSTEM_NAME) \
+    ProductModel=$(PRODUCT_SYSTEM_DEVICE) \
+    DeviceProduct=$(PRODUCT_SYSTEM_NAME)
