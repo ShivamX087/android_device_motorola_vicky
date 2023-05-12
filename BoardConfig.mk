@@ -49,10 +49,13 @@ BOARD_PREBUILT_DTBIMAGE_DIR := $(KERNEL_PATH)/dtb
 BOARD_MKBOOTIMG_ARGS += --dtb $(BOARD_PREBUILT_DTBIMAGE_DIR)/mt6789.dtb
 
 # Kernel
- TARGET_NO_KERNEL_OVERRIDE := true
- LOCAL_KERNEL := $(KERNEL_PATH)/Image.gz
- PRODUCT_COPY_FILES += \
- 	$(LOCAL_KERNEL):kernel
+TARGET_NO_KERNEL_OVERRIDE := true
+LOCAL_KERNEL := $(KERNEL_PATH)/Image.gz
+PRODUCT_COPY_FILES += \
+	$(LOCAL_KERNEL):kernel
+
+# Workaround to make lineage's soong generator work
+TARGET_KERNEL_SOURCE := $(KERNEL_PATH)/kernel-headers
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := vicky
