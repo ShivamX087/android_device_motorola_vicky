@@ -128,6 +128,10 @@ BOARD_USES_SYSTEM_DLKIMAGE := true
 BOARD_USES_ODM_DLKIMAGE := true
 BOARD_USES_VENDOR_DLKMIMAGE := true
 
+# HIDL
+DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/vintf/manifest.xml
+DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/vintf/compatibility_matrix.xml
+
 # Platform
 TARGET_BOARD_PLATFORM := mt6789
 BOARD_HAS_MTK_HARDWARE := true
