@@ -32,3 +32,7 @@ bluetooth.profile.sap.server.enabled?=true
 ro.vendor.mtk.bt_sap_enable=true
 ro.vendor.bt.platform=connac1x
 vendor.bluetooth.ldac.abr=true
+
+# DRM
+drm.service.enabled=true
+ro.vendor.mtk_widevine_drm_l1_support=1
