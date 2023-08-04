@@ -3,6 +3,7 @@ aaudio.mmap_exclusive_policy=2
 aaudio.mmap_policy=2
 persist.vendor.rm.debug.headsetmic=1
 persist.vendor.rm.debug.phonemic=1
+ro.audio.monitorRotation=true
 ro.config.media_vol_default=10
 ro.config.vc_call_vol_default=4
 ro.config.media_vol_steps=25
