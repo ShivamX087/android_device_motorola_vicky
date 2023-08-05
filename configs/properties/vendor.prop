@@ -49,6 +49,7 @@ ro.vendor.mtk_aod_support=0
 
 # DRM
 drm.service.enabled=true
+ro.netflix.bsp_rev=MTK6789-35965-1
 ro.vendor.mtk_widevine_drm_l1_support=1
 
 # Gatekeeper
