@@ -4,6 +4,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Inherit generic_ramdisk product configuration
+$(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
+
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 31
 
