@@ -21,6 +21,10 @@ PRODUCT_PACKAGES += \
     com.android.hardware.boot \
     android.hardware.boot-service.default_recovery
 
+# FastbootD
+PRODUCT_PACKAGES += \
+    fastbootd
+
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
