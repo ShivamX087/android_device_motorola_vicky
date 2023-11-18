@@ -132,7 +132,8 @@ PRODUCT_USE_DYNAMIC_PARTITIONS := true
 # HIDL
 PRODUCT_PACKAGES += \
     libhidltransport.vendor \
-    libhwbinder.vendor
+    libhwbinder.vendor \
+    android.hidl.allocator@1.0.vendor
 
 # Init
 PRODUCT_PACKAGES += \
