@@ -23,6 +23,7 @@ PRODUCT_PACKAGES += \
 
 # FastbootD
 PRODUCT_PACKAGES += \
+    android.hardware.fastboot@1.1-impl.custom \
     fastbootd
 
 # Health
