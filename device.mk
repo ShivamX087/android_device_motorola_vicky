@@ -4,6 +4,8 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+DEVICE_PATH := device/motorola/vicky
+
 # Inherit generic_ramdisk product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/generic_ramdisk.mk)
 
@@ -146,6 +148,20 @@ PRODUCT_PACKAGES += \
     init.project.rc \
     init.sensor_2_0.rc \
     ueventd.mt6789.rc
+
+PRODUCT_COPY_FILES += \
+    device/motorola/vicky/modules/recovery-firmware/boe_goodix_cfg_group.bin:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/firmware/boe_goodix_cfg_group.bin \
+    device/motorola/vicky/modules/recovery-firmware/boe_goodix_firmware.bin:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/firmware/boe_goodix_firmware.bin \
+    device/motorola/vicky/modules/recovery-firmware/boe_goodix_test_limits_255.csv:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/firmware/boe_goodix_test_limits_255.csv \
+    device/motorola/vicky/modules/recovery-firmware/csot_goodix_cfg_group.bin:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/firmware/csot_goodix_cfg_group.bin \
+    device/motorola/vicky/modules/recovery-firmware/csot_goodix_firmware.bin:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/firmware/csot_goodix_firmware.bin \
+    device/motorola/vicky/modules/recovery-firmware/csot_goodix_test_limits_255.csv:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/firmware/csot_goodix_test_limits_255.csv \
+    device/motorola/vicky/modules/recovery-firmware/mt6631_fm_v1_coeff.bin:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/firmware/mt6631_fm_v1_coeff.bin \
+    device/motorola/vicky/modules/recovery-firmware/mt6631_fm_v1_patch.bin:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/firmware/mt6631_fm_v1_patch.bin \
+    device/motorola/vicky/modules/recovery-firmware/mt6635_fm_v1_coeff.bin:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/firmware/mt6635_fm_v1_coeff.bin \
+    device/motorola/vicky/modules/recovery-firmware/mt6635_fm_v1_patch.bin:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/firmware/mt6635_fm_v1_patch.bin \
+    device/motorola/vicky/modules/recovery-firmware/novatek_ts_fw.bin:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/firmware/novatek_ts_fw.bin \
+    device/motorola/vicky/modules/recovery-firmware/novatek_ts_fw_tm.bin:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/firmware/novatek_ts_fw_tm.bin
 
 # Modules
 PRODUCT_PACKAGES += \
