@@ -270,6 +270,47 @@ vendor/lib64/vendor.mediatek.hardware.neuropilot.agent@1.2.so
 vendor/bin/hw/android.hardware.secure_element@1.2-service-mediatek
 vendor/etc/init/android.hardware.secure_element@1.2-service-mediatek.rc
 
+# TEE
+vendor/app/mcRegistry/020f0000000000000000000000000000.drbin
+vendor/app/mcRegistry/020f0000000000000000000000000000.tlbin
+vendor/app/mcRegistry/033c0000000000000000000000000000.drbin
+vendor/app/mcRegistry/033c0000000000000000000000000000.tlbin
+vendor/app/mcRegistry/05120000000000000000000000000001.drbin
+vendor/app/mcRegistry/05120000000000000000000000000001.tlbin
+vendor/app/mcRegistry/06090000000000000000000000000000.drbin
+vendor/app/mcRegistry/06090000000000000000000000000000.tlbin
+vendor/app/mcRegistry/07010000000000000000000000000000.tlbin
+vendor/app/mcRegistry/0706000000000000000000000000004d.tlbin
+vendor/app/mcRegistry/07061000000000000000000000000000.tlbin
+vendor/app/mcRegistry/07150000000000000000000000000000.drbin
+vendor/app/mcRegistry/07150000000000000000000000000000.tlbin
+vendor/app/mcRegistry/07170000000000000000000000000000.drbin
+vendor/app/mcRegistry/07170000000000000000000000000000.tlbin
+vendor/app/mcRegistry/08030000000000000000000000000000.tabin
+vendor/app/mcRegistry/08040000000000000000000000003419.tabin
+vendor/app/mcRegistry/08050000000000000000000000003419.drbin
+vendor/app/mcRegistry/08050000000000000000000000003419.tlbin
+vendor/app/mcRegistry/08080000000000000000000000000000.tlbin
+vendor/app/mcRegistry/08110000000000000000000000000000.tabin
+vendor/app/mcRegistry/40188311faf343488db888ad39496f9a.drbin
+vendor/app/mcRegistry/40188311faf343488db888ad39496f9a.tlbin
+vendor/app/mcRegistry/5020170115e016302017012521300000.drbin
+vendor/app/mcRegistry/5020170115e016302017012521300000.tlbin
+vendor/app/mcRegistry/abcd270ea5c44c58bcd3384a2fa2539e.tabin
+vendor/app/mcRegistry/attpre_6716af0c135559728ae9e9754da47ccd.tabin
+vendor/app/mcRegistry/e97c270ea5c44c58bcd3384a2fa2539e.tabin
+vendor/bin/hw/vendor.trustonic.tee@1.1-service
+vendor/bin/mcDriverDaemon
+vendor/etc/init/tee.rc
+vendor/etc/init/trustonic.rc
+vendor/etc/init/vendor.trustonic.tee@1.1-service.rc
+vendor/lib64/libTEECommon.so
+vendor/lib64/libgz_gp_client.so
+vendor/lib64/libgz_uree.so
+vendor/lib64/vendor.trustonic.tee.tui@1.0.so
+vendor/lib64/vendor.trustonic.tee@1.0.so
+vendor/lib64/vendor.trustonic.tee@1.1.so
+
 # Tether Offload
 vendor/bin/hw/tetheroffloadservice
 vendor/bin/netdagent
