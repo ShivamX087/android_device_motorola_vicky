@@ -213,6 +213,10 @@ PRODUCT_SHIPPING_API_LEVEL := 31
 PRODUCT_PACKAGES += \
     android.hardware.light-service.lineage
 
+# Secure Element
+PRODUCT_PACKAGES += \
+    android.hardware.secure_element@1.2.vendor
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \

@@ -266,6 +266,10 @@ vendor/lib64/vendor.mediatek.hardware.neuropilot.agent@1.0.so
 vendor/lib64/vendor.mediatek.hardware.neuropilot.agent@1.1.so
 vendor/lib64/vendor.mediatek.hardware.neuropilot.agent@1.2.so
 
+# Secure Element
+vendor/bin/hw/android.hardware.secure_element@1.2-service-mediatek
+vendor/etc/init/android.hardware.secure_element@1.2-service-mediatek.rc
+
 # Tether Offload
 vendor/bin/hw/tetheroffloadservice
 vendor/bin/netdagent
