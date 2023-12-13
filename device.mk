@@ -128,10 +128,18 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libgatekeeper.vendor
 
+# GNSS
+PRODUCT_PACKAGES += \
+    android.hardware.gnss.measurement_corrections@1.1.vendor \
+    android.hardware.gnss.visibility_control@1.0.vendor \
+    android.hardware.gnss@1.1.vendor \
+    android.hardware.gnss@2.1.vendor \
+    android.hardware.gnss-V1-ndk.vendor
+
 # Health
 PRODUCT_PACKAGES += \
-    android.hardware.health-service.example \
-    android.hardware.health-service.example_recovery
+    android.hardware.health-service.mediatek \
+    android.hardware.health-service.mediatek-recovery
 
 # Dynamic partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true

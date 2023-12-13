@@ -40,6 +40,12 @@ ro.vendor.mtk_widevine_drm_l1_support=1
 # Gatekeeper
 ro.hardware.gatekeeper=trustonic
 
+# GNSS
+ro.vendor.gps.chrdev=gps_drv_stp
+ro.vendor.mtk_agps_app=1
+ro.vendor.mtk_gps_support=1
+ro.vendor.mtk_log_hide_gps=1
+
 # Neural Networks
 debug.mtk_tflite.target_nnapi=29
 ro.vendor.mtk_nn.option=A,B,C,D,E,F,G,Z
