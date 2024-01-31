@@ -135,6 +135,9 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/vintf/manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/vintf/compatibility_matrix.xml
 
+# OTA assert
+TARGET_OTA_ASSERT_DEVICE := vicky
+
 # Platform
 TARGET_BOARD_PLATFORM := mt6789
 BOARD_HAS_MTK_HARDWARE := true
