@@ -2,3 +2,6 @@ on init
     setprop sys.usb.ffs.aio_compat 1
     setprop sys.usb.configfs 1
     setprop sys.usb.controller "musb-hdrc"
+
+on fs
+    exec_background u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules mmi_relay touchscreen_mmi goodix_brl_mmi
