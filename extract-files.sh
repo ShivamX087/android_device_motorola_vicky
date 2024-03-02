@@ -77,6 +77,9 @@ function blob_fixup {
         vendor/etc/init/vendor.mediatek.hardware.mtkpower@1.0-service.rc)
             echo "$(cat ${2}) input" > "${2}"
             ;;
+        vendor/lib*/hw/android.hardware.thermal@2.0-impl.so)
+            "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
+            ;;
     esac
 }
 
