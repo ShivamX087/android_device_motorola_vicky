@@ -281,5 +281,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.vibrator-service.mediatek
 
+# vndservice
+PRODUCT_PACKAGES += \
+   vndservicemanager
+    
 # Inherit the proprietary files
 $(call inherit-product, vendor/motorola/vicky/vicky-vendor.mk)
