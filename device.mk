@@ -283,7 +283,8 @@ PRODUCT_PACKAGES += \
 
 # vndservice
 PRODUCT_PACKAGES += \
-   vndservicemanager
+   vndservicemanager \
+   vndservice
     
 # Inherit the proprietary files
 $(call inherit-product, vendor/motorola/vicky/vicky-vendor.mk)
