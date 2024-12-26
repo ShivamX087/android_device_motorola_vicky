@@ -45,6 +45,11 @@ ro.vendor.mediatek.platform=MT6789
 ro.soc.model=MT6789
 ro.soc.manufacturer=Mediatek
 
+# Storage
+external_storage.casefold.enabled=1
+external_storage.projid.enabled=1
+external_storage.sdcardfs.enabled=0
+
 # Wi-Fi
 ro.vendor.wifi.sap.concurrent.iface=ap1
 ro.vendor.wifi.sap.interface=ap0
