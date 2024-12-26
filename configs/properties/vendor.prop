@@ -40,6 +40,11 @@ ro.vendor.mtk_widevine_drm_l1_support=1
 # Gatekeeper
 ro.hardware.gatekeeper=trustonic
 
+# Platform
+ro.vendor.mediatek.platform=MT6789
+ro.soc.model=MT6789
+ro.soc.manufacturer=Mediatek
+
 # Wi-Fi
 ro.vendor.wifi.sap.concurrent.iface=ap1
 ro.vendor.wifi.sap.interface=ap0
