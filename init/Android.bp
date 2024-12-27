@@ -10,3 +10,10 @@ prebuilt_etc {
     vendor: true,
     vendor_ramdisk_available: true,
 }
+
+prebuilt_etc {
+     name: "init.mt6789.usb.rc",
+     src: "init.mt6789.usb.rc",
+     sub_dir: "init/hw",
+     vendor: true,
+ }
