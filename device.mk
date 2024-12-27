@@ -34,6 +34,7 @@ PRODUCT_PACKAGES += \
 
 # Init
 PRODUCT_PACKAGES += \
+    init.mt6789.usb.rc \
     fstab.mt6789 \
     fstab.mt6789.vendor_ramdisk
 
