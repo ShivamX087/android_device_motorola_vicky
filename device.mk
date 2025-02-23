@@ -21,6 +21,11 @@ PRODUCT_PACKAGES += \
     com.android.hardware.boot \
     android.hardware.boot-service.default_recovery
 
+# Init
+PRODUCT_PACKAGES += \
+    fstab.mt6789 \
+    fstab.mt6789.vendor_ramdisk
+
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 31
 
