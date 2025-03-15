@@ -191,6 +191,10 @@ PRODUCT_COPY_FILES += \
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 31
 
+# Light
+PRODUCT_PACKAGES += \
+    android.hardware.light-service.lineage
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
