@@ -19,6 +19,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_ven
 # Setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
+# AAPT
+ PRODUCT_AAPT_CONFIG := normal
+ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
     POSTINSTALL_PATH_system=system/bin/otapreopt_script \
@@ -30,18 +34,18 @@ AB_OTA_POSTINSTALL_CONFIG += \
     POSTINSTALL_PATH_vendor=bin/checkpoint_gc \
     FILESYSTEM_TYPE_vendor=ext4 \
     POSTINSTALL_OPTIONAL_vendor=true
- 
+
 PRODUCT_PACKAGES += \
     checkpoint_gc \
     otapreopt_script
- 
+
 PRODUCT_PACKAGES += \
     e2fsck.vendor_ramdisk \
     fsck.f2fs.vendor_ramdisk \
     linker.vendor_ramdisk \
     resize2fs.vendor_ramdisk \
     tune2fs.vendor_ramdisk
- 
+
 PRODUCT_PACKAGES += \
     update_engine \
     update_engine_sideload \
@@ -51,6 +55,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     com.android.hardware.boot \
     android.hardware.boot-service.default_recovery
+
+# Display
+TARGET_SCREEN_HEIGHT := 2400
+TARGET_SCREEN_WIDTH := 1080
 
 # FastbootD
 PRODUCT_PACKAGES += \
