@@ -56,6 +56,7 @@ BOARD_MKBOOTIMG_ARGS += \
     --tags_offset $(BOARD_TAGS_OFFSET)
 
 BOARD_KERNEL_CMDLINE += \
+    androidboot.selinux=permissive \
     bootopt=64S3,32N2,64N2
 
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
