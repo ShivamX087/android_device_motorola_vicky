@@ -74,6 +74,7 @@ PRODUCT_PACKAGES += \
     init.mmi.rc \
     init.modem.rc \
     init.mt6789.rc \
+    init.recovery.mt6789.rc \
     init.mtkgki.rc \
     init.project.rc \
     init.sensor_2_0.rc \

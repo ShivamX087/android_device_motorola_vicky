@@ -61,6 +61,13 @@ prebuilt_etc {
 }
 
 prebuilt_etc {
+    name: "init.recovery.mt6789.rc",
+    recovery: true,
+    src: "init.recovery.mt6789.rc",
+    sub_dir: "init",
+}
+
+prebuilt_etc {
     name: "init.mtkgki.rc",
     src: "init.mtkgki.rc",
     relative_install_path: "init/hw",
