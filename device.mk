@@ -37,9 +37,26 @@ PRODUCT_PACKAGES += \
 
 # Init
 PRODUCT_PACKAGES += \
-    init.mt6789.usb.rc \
     fstab.mt6789 \
-    fstab.mt6789.vendor_ramdisk
+    fstab.mt6789.vendor_ramdisk \
+    init_connectivity.rc \
+    init.connectivity.common.rc \
+    init.mmi.chipset.rc \
+    init.mmi.overlay.rc \
+    init.mmi.rc \
+    init.modem.rc \
+    init.mt6789.rc \
+    init.mt6789.usb.rc \
+    init.mtkgki.rc \
+    init.project.rc \
+    init.sensor_2_0.rc \
+    ueventd.mt6789.rc
+
+# Modules
+PRODUCT_PACKAGES += \
+    init.insmod.sh \
+    init.insmod.mt6789.cfg \
+    init.oem.hw.sh
 
 # Permissions
 PRODUCT_COPY_FILES += \
