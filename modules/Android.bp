@@ -1,0 +1,23 @@
+//
+// Copyright (C) 2023 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+ 
+ sh_binary {
+     name: "init.insmod.sh",
+     src: "init.insmod.sh",
+     vendor: true,
+ }
+ 
+ prebuilt_etc {
+     name: "init.insmod.mt6789.cfg",
+     src: "init.insmod.mt6789.cfg",
+     vendor: true,
+ }
+
+sh_binary {
+     name: "init.oem.hw.sh",
+     src: "init.oem.hw.sh",
+     vendor: true,
+ }
