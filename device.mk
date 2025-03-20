@@ -133,7 +133,8 @@ PRODUCT_SHIPPING_API_LEVEL := 31
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
+    $(LOCAL_PATH) \
+    hardware/mediatek
 
 # USB
 PRODUCT_PACKAGES += \
