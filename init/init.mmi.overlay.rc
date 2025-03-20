@@ -1,0 +1,153 @@
+on early-init
+   insmod /vendor/lib/modules/qpnp_adaptive_charge.ko
+   insmod /vendor/lib/modules/sensors_class.ko
+   insmod /vendor/lib/modules/chipone_tddi_mmi.ko
+   insmod /vendor/lib/modules/mmi_sys_temp.ko
+   insmod /vendor/lib/modules/goodix_mmi.ko
+   insmod /vendor/lib/modules/aw9610x.ko
+   insmod /vendor/lib/modules/aw86715.ko
+   insmod /vendor/lib/modules/pn557.ko
+   insmod /vendor/lib/modules/ets_fod_mmi.ko
+   insmod /vendor/lib/modules/leds-gpio.ko
+   insmod /vendor/lib/modules/bq2597x_mmi_discrete.ko
+   insmod /vendor/lib/modules/mmi_discrete_charger_qc3p.ko
+
+on property:ro.build.type=userdebug
+    insmod /vendor/lib/modules/watchdogtest.ko
+
+on post-fs-data
+    # calibration
+    mkdir /data/vendor/sensor 0774 system system
+    # Sensor
+    chmod 0660 /dev/hf_manager
+    chown system system /dev/hf_manager
+
+    # config fingerprint
+    mkdir /data/vendor/.fps 0770 system vendor_fingerp
+    mkdir /mnt/vendor/persist/fps 0770 system system
+    mkdir /data/vendor/egis 0770 system vendor_fingerp
+    mkdir /data/vendor/egis/cqa 0770 system vendor_fingerp
+    mkdir /mnt/vendor/persist/egis 0770 system vendor_fingerp
+
+    # Required by touchRec for write the touch data
+    mkdir /data/vendor/touchrec 0770 input input
+    chown input input /data/vendor/touchrec/bootindex
+    chown input input /data/vendor/touchrec/lastbootuuid
+    chown input input /data/vendor/touchrec/touch_data.txt
+    chmod 0664 /data/vendor/touchrec/touch_data.txt
+
+on late-init
+    #moto algo params
+    chmod 0660 /sys/bus/platform/drivers/mtk_nanohub/algo_params
+    chown system system /sys/bus/platform/drivers/mtk_nanohub/algo_params
+
+    chown system system /sys/class/sensors/capsense_bottom_left/enable
+    chown system system /sys/class/sensors/capsense_bottom_left/poll_delay
+    chown system system /sys/class/sensors/capsense_bottom_right/enable
+    chown system system /sys/class/sensors/capsense_bottom_right/poll_delay
+    chown system system /sys/class/sensors/capsense_top_left/enable
+    chown system system /sys/class/sensors/capsense_top_left/poll_delay
+    chown system system /sys/class/sensors/capsense_top_mid/enable
+    chown system system /sys/class/sensors/capsense_top_mid/poll_delay
+    chown system system /sys/class/sensors/capsense_top_right/enable
+    chown system system /sys/class/sensors/capsense_top_right/poll_delay
+
+service capsense_reset /vendor/bin/capsense_reset
+    class core
+    user system
+    group system input
+    disabled
+
+on property:sys.boot_completed=1
+  start capsense_reset
+  chown system system /sys/class/touchscreen/primary/stylus_mode
+  chmod 0660 /sys/class/touchscreen/primary/stylus_mode
+
+# Turn on led to indicate device on in factory mode
+on property:ro.bootmode=mot-factory
+    write /sys/class/leds/charging/brightness 255
+
+on early-boot
+    # Permission for Health Storage HAL
+    chown system system /sys/devices/platform/112b0000.ufshci/manual_gc
+    chown system system /sys/devices/platform/112b0000.ufshci/ufshid/trigger
+
+on boot
+   write /sys/class/i2c-dev/i2c-9/device/9-0030/wireless_fw_update 1
+   # Set wls perms for HAL
+   chown system system /sys/class/power_supply/wireless/device/pen_control
+   chown system system /sys/class/power_supply/wireless/device/tx_mode
+   chown system system /sys/class/power_supply/wireless/device/wls_input_current_limit
+   chown system system /sys/class/power_supply/wireless/device/folio_mode
+   chmod 0660 /sys/class/power_supply/wireless/device/pen_control
+   chmod 0660 /sys/class/power_supply/wireless/device/tx_mode
+   chmod 0660 /sys/class/power_supply/wireless/device/wls_input_current_limit
+   chmod 0660 /sys/class/power_supply/wireless/device/folio_mode
+   # change permission for capsensor
+   chown system system /sys/class/capsense/reset
+   chown system system /sys/class/capsense/int_state
+   chown radio system /sys/class/capsense/reg
+   chown radio system /sys/class/capsense/fw_download_status
+   chmod 0660 /sys/class/capsense/reset
+   chmod 0660 /sys/class/capsense/int_state
+   chmod 0660 /sys/class/capsense/reg
+   chmod 0660 /sys/class/capsense/fw_download_status
+
+   # change permission for nfc
+   chown nfc nfc /dev/nq-nci
+   chmod 0666 /dev/nq-nci
+
+  # Change ownership and permission for cp-standalone factory testing
+  chown system system /sys/class/power_supply/cp-standalone/voltage_now
+  chown system system  /sys/class/power_supply/cp-standalone/device/force_chg_auto_enable
+  chmod 0644 /sys/class/power_supply/cp-standalone/voltage_now
+# Set adaptive charging perms for HAL
+  chown system system /sys/module/qpnp_adaptive_charge/parameters/upper_limit
+  chown system system /sys/module/qpnp_adaptive_charge/parameters/lower_limit
+   # touch api
+   chown system system /sys/class/touchscreen/primary/interpolation
+   chmod 0660 /sys/class/touchscreen/primary/interpolation
+   chown system system /sys/class/touchscreen/primary/first_filter
+   chmod 0660 /sys/class/touchscreen/primary/first_filter
+   chown system system /sys/class/touchscreen/primary/edge
+   chmod 0660 /sys/class/touchscreen/primary/edge
+   chown system system /sys/class/touchscreen/primary/gesture
+   chmod 0660 /sys/class/touchscreen/primary/gesture
+
+    write /sys/block/sdc/queue/scheduler bfq
+    write /sys/block/sdc/queue/iosched/slice_idle 0
+
+  # set aw smart pa node can be accessed by audio group
+  chown root audio /sys/devices/platform/soc/11017000.i2c/i2c-5/5-0034/cali_re
+  chmod 0664 /sys/devices/platform/soc/11017000.i2c/i2c-5/5-0034/cali_re
+
+# Change ownership and permission for Bq2597x-standalone factory testing
+  chown system system /sys/class/power_supply/bq2597x-standalone/voltage_now
+  chown system system /sys/class/power_supply/bq2597x-standalone/charging_enabled
+  chmod 0644 /sys/class/power_supply/bq2597x-standalone/voltage_now
+  chmod 0664 /sys/class/power_supply/bq2597x-standalone/charging_enabled
+
+on fs
+   exec_background u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules mmi_relay touchscreen_mmi goodix_brl_mmi
+
+# camera eeprom calibration
+on property:sys.boot_completed=1
+  chmod 0644 /data/vendor/camera_dump/mot_gt24p64e_s5khm6_eeprom.bin
+  chmod 0644 /data/vendor/camera_dump/mot_gt24p64ba2_hi1634q_eeprom.bin
+  chmod 0644 /data/vendor/camera_dump/mot_vicky_s5k4h7_eeprom.bin
+  chmod 0644 /data/vendor/camera_dump/mot_vicky_ov02b10_otp.bin
+
+
+# Batt_health init
+on post-fs-data
+    # for batt_health server
+    mkdir /mnt/vendor/persist/batt_health 0770 vendor_pwric vendor_pwric
+on property:sys.boot_completed=1
+    start vendor.batt_health
+on charger
+    start vendor.batt_health
+service vendor.batt_health /vendor/bin/batt_health
+    class late_start
+    user vendor_pwric
+    group vendor_pwric cache net_admin log
+    disabled
