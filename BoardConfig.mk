@@ -6,6 +6,7 @@
 
 DEVICE_PATH := device/motorola/vicky
 KERNEL_PATH := device/motorola/vicky-kernel
+CONFIGS_PATH := $(DEVICE_PATH)/configs
 
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
@@ -132,6 +133,9 @@ TARGET_BOARD_PLATFORM := mt6789
 BOARD_HAS_MTK_HARDWARE := true
 BOARD_VENDOR := motorola
 
+# Properties
+TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
+
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/init/fstab.mt6789
 TARGET_USERIMAGES_USE_EXT4 := true
@@ -150,6 +154,9 @@ VENDOR_SECURITY_PATCH := 2025-02-01
 
 # SELinux
 include device/mediatek/sepolicy_vndr/SEPolicy.mk
+
+# Vintf
+DEVICE_MANIFEST_FILE := $(CONFIGS_PATH)/vintf/manifest.xml
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
