@@ -36,3 +36,6 @@ vendor.bluetooth.ldac.abr=true
 # DRM
 drm.service.enabled=true
 ro.vendor.mtk_widevine_drm_l1_support=1
+
+# Gatekeeper
+ro.hardware.gatekeeper=trustonic
