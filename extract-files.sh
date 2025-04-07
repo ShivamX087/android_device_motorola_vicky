@@ -64,7 +64,8 @@ function blob_fixup {
             ;;
         vendor/etc/init/android.hardware.neuralnetworks-shim-service-mtk.rc)
             sed -i 's/start/enable/' "$2"
-	    ;;
+	          ;;
+        vendor/lib*/hw/mt6789/vendor.mediatek.hardware.pq@2.15-impl.so|\
         vendor/bin/hw/vendor.mediatek.hardware.pq@2.2-service)
             "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
             ;;
