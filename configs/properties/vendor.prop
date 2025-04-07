@@ -40,6 +40,13 @@ ro.vendor.mtk_widevine_drm_l1_support=1
 # Gatekeeper
 ro.hardware.gatekeeper=trustonic
 
+# Neural Networks
+debug.mtk_tflite.target_nnapi=29
+ro.vendor.mtk_nn.option=A,B,C,D,E,F,G,Z
+ro.vendor.mtk_nn_baseline_support=1
+ro.vendor.mtk_nn_quant_preferred=1
+ro.vendor.mtk_nn_support=1
+
 # Platform
 ro.vendor.mediatek.platform=MT6789
 ro.soc.model=MT6789
