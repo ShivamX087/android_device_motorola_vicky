@@ -105,6 +105,15 @@ PRODUCT_COPY_FILES += \
 TARGET_SCREEN_HEIGHT := 2400
 TARGET_SCREEN_WIDTH := 1080
 
+PRODUCT_PACKAGES += \
+    android.frameworks.displayservice@1.0.vendor \
+    libhwc2on1adapter \
+    libhwc2onfbadapter
+
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.composer@2.3-service
+
+
 # DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm-service.clearkey
