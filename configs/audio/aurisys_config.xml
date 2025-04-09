@@ -127,7 +127,6 @@
                 </component>
             </components>
         </library>
-        <!-- Audio-add END HTH-111539 -->
         <!--
          * =====================================================================
          *   MediaTek IIR
@@ -233,8 +232,8 @@
          * =====================================================================
         -->
         <library name="mtk_speech_enh"
-                 lib_path="/vendor/lib/lib_speech_enh.so"
-                 lib64_path="/vendor/lib64/lib_speech_enh.so"
+                 lib_path="/vendor/lib/libmtkspparser.so"
+                 lib64_path="/vendor/lib64/libmtkspparser.so"
                  param_path="/vendor/etc/audio_param"
                  lib_dump_path="AUTO"
                  adb_cmd_key="MTKSE">
