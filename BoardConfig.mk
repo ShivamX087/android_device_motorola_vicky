@@ -148,6 +148,7 @@ BOARD_VENDOR := motorola
 
 # Properties
 TARGET_VENDOR_PROP += $(CONFIGS_PATH)/properties/vendor.prop
+TARGET_SYSTEM_PROP += $(CONFIGS_PATH)/properties/system.prop
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/init/fstab.mt6789
