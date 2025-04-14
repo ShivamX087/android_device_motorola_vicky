@@ -60,3 +60,6 @@ odm_dlkm                          /odm_dlkm                    ext4     ro      
 /dev/block/by-name/dtbo           /dtbo                        emmc     defaults                                                                                                               defaults
 /dev/block/by-name/otp            /otp                         emmc     defaults                                                                                                               defaults
 /dev/block/by-name/vbmeta         /vbmeta                      emmc     defaults                                                                                                               defaults
+
+# zram
+/dev/block/zram0                                 none                  swap    defaults                                            zramsize=55%
