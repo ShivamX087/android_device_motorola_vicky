@@ -179,6 +179,7 @@ PRODUCT_PACKAGES += \
     init.mmi.rc \
     init.modem.rc \
     init.mt6789.rc \
+    init.mt6789.usb.rc \
     init.recovery.mt6789.rc \
     init.mtkgki.rc \
     init.project.rc \
