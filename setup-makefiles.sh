@@ -25,6 +25,14 @@ if [ ! -f "${HELPER}" ]; then
 fi
 source "${HELPER}"
 
+function vendor_imports() {
+	cat <<EOF >>"$1"
+ 	       "device/motorola/vicky",
+ 	       "hardware/mediatek",
+	       "hardware/motorola"
+EOF
+}
+
 # Initialize the helper
 setup_vendor "${DEVICE}" "${VENDOR}" "${ANDROID_ROOT}"
 
